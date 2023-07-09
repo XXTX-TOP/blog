@@ -5,7 +5,14 @@ menu:
   关于: /about
 
 # 主页banner图
-banner: https://storage.deepin.org/thread/202307091951125992_linux%E8%83%8C%E6%99%AF%E5%9B%BE.png
+#banner: https://storage.deepin.org/thread/202307091951125992_linux%E8%83%8C%E6%99%AF%E5%9B%BE.png
+
+# Banner
+banner:
+  enable: true         # Display banner
+  url: https://cdn.discordapp.com/attachments/1064543829807595580/1107135747670167642/dave-netto-wWYwYiCoVwI-unsplash.jpg
+  position: center         # Specifies the alignment of the image, see the "object-position" property in CSS
+  onAllPages: true         # Display banner on all pages
 
 # 站点通知信息
 notice: 随便写点，牢骚，视频文案，贼辣鸡的文章，还有……随便乱写的小说
@@ -13,7 +20,7 @@ notice: 随便写点，牢骚，视频文案，贼辣鸡的文章，还有……
 # 作者信息
 author:
   name: XXTXTOP
-  #avatar: https://i1.hdslb.com/bfs/face/7f7c3d3e1abcd7867983…77abd10d306ff3.jpg@96w_96h_1c_1s_!web-avatar.webp
+  avatar: https://media.discordapp.net/attachments/1064543829807595580/1105328985514201179/IMG_4139.png
   description: 
   - 2023届高中毕业生，可能要复读
   - 目前心情烦躁，一点就爆
