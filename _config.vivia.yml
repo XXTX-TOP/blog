@@ -37,7 +37,7 @@ archive_type: 'monthly'
 recent_posts_limits: 5
 
 # Personal info
- avatar: https://i1.hdslb.com/bfs/face/7f7c3d3e1abcd7867983…77abd10d306ff3.jpg@96w_96h_1c_1s_!web-avatar.webp
+# avatar: https://i1.hdslb.com/bfs/face/7f7c3d3e1abcd7867983…77abd10d306ff3.jpg@96w_96h_1c_1s_!web-avatar.webp
 subtitle: 大家好，我是Linux爱好者XXTXTOP，目前在使用deepin/uos等Linux发行版，在学习C/C++
 links:
   - name: Twitter

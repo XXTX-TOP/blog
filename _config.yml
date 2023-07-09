@@ -106,4 +106,4 @@ theme: vivia
 ## Docs: https://hexo.io/docs/one-command-deployment
 #deploy:
   #type: git
-  #repo: https://github.com/LitenPanJun/blog.git
+  #repo:
