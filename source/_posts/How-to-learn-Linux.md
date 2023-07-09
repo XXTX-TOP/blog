@@ -7,4 +7,4 @@ tags:
 categories:
 ---
 
-![](../images/How-to-learn Linux.png)
+![](/images/How-to-learn Linux.png)
