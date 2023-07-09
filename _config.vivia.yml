@@ -1,0 +1,61 @@
+# Header
+menu:
+  首页: /
+  归档: /archives
+  关于: /about
+  友链: /links
+# rss: /atom.xml
+
+home:
+  style: default           # default, detail
+
+favicon:                   # Path to the custom favicon (e.g. "/favicon.png" if your favicon file is located at /source/favicon.png)
+
+# Banner
+banner:
+  enable: false            # Display banner
+  url: 
+  position: center         # Specifies the alignment of the image, see the "object-position" property in CSS
+  onAllPages: true         # Display banner on all pages
+
+# Appearence
+hue: 270                   # The hue of the theme color (e.g. red: 0, orange: 60, blue: 260, purple: 300, pink: 345)
+
+# Sidebar
+sidebar:
+  widgets:                 # Plugins to be enabled (profile, category, tag, archive, recent_posts)
+    normal:                # Scroll along with the page
+      - profile
+    sticky:                # Stick to the top of the page
+      - category
+      - tag
+      - archive
+      - recent_posts
+
+# Widget behavior
+archive_type: 'monthly'
+recent_posts_limits: 5
+
+# Personal info
+avatar: https://i0.hdslb.com/bfs/face/f568f27a4cc00e729202a110fed4b0419887dafe.jpg
+author: Zachary Pan
+subtitle: 或者叫Liten_PanJun，中文网名小潘菌，可叫小潘/潘子，2023届高中毕业生，确定复读
+links:
+  - name: Twitter
+    icon: fa-brands fa-twitter      # Find icon codes at https://fontawesome.com/search
+    url: https://twitter.com/Liten_PanJun
+  # - name: Steam
+  #   icon: fa-brands fa-steam
+  #   url: https://store.steampowered.com
+  - name: GitHub
+    icon: fa-brands fa-github
+    url: https://github.com/LitenPanJun
+  - name: BiliBili
+    icon: fa-brands fa-bilibili
+    url: https://space.bilibili.com/351750564
+
+comment:
+  valine:
+    enable: false
+    appId: 
+    appKey: 

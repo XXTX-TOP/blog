@@ -1,0 +1,44 @@
+name: Blog CI/CD
+
+# 触发条件：在 push 到 hexo-blog-backup 分支后触发
+on:
+  push:
+    branches: main
+jobs:
+  build:
+    runs-on: ubuntu-latest # 使用最新的 Ubuntu 系统作为编译部署的环境
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout codes
+      uses: actions/checkout@v3
+
+    - name: Use Node.js Latest
+      # 设置 node.js 环境
+      uses: actions/setup-node@v3
+      with:
+        node-version: latest
+
+    - name: Cache node modules
+      # 设置包缓存目录，避免每次下载
+      uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-npm-cache
+        restore-keys: |
+          ${{ runner.OS }}-npm-cache
+
+    - name: Install hexo dependencies
+      # 安装 hexo
+      run: npm install
+
+    - name: Build
+     # 编译 markdown 文件
+      run: npm run build
+
+    - name: Deploy hexo blog
+      # 将编译后的博客文件推送到指定仓库
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
