@@ -14,7 +14,7 @@ favicon:                   # Path to the custom favicon (e.g. "/favicon.png" if 
 # Banner
 banner:
   enable: true            # Display banner
-  url: 
+  url: https://storage.deepin.org/thread/202305170933518513_v23batebanner1920x780.jpg
   position: center         # Specifies the alignment of the image, see the "object-position" property in CSS
   onAllPages: true         # Display banner on all pages
 
