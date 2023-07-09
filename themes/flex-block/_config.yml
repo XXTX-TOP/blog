@@ -98,10 +98,9 @@ favicon: /favicon.ico
 social_icon:
   enable: true
   icons:
-    ins     :
-    zhihu   :
-    weibo   : 
-    github  : https://github.com/LitenPanJun/
-    twitter : https://twitter.com/Liten_PanJun
-
+    ins     : https://github.com/XXTX-TOP
+    zhihu   : https://github.com/XXTX-TOP
+    weibo   : https://github.com/XXTX-TOP
+    github  : https://github.com/XXTX-TOP
+    twitter : https://github.com/XXTX-TOP
 language: zh-CN
