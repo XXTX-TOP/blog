@@ -1,7 +1,7 @@
 ---
 title: [经验分享] 记录一下linux内核的编译
 date: 2022-11-20 21:02:01
-updated: 2022-11-20 21:02:01
+updated: 2023-11-20 21:02:01
 tags: 
 - 日记
 - 生活
@@ -10,7 +10,8 @@ categories:
 - 经验分享
 ---
 # 记录一下linux内核的编译
-<https://www.kernel.org/>
+
+[https://www.kernel.org/](https://www.kernel.org/)
 
 ## 首先去内核官方下内核包
 

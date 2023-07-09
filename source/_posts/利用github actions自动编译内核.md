@@ -1,7 +1,7 @@
 ---
 title: [经验分享] 利用github actions自动编译内核
 date: 2022-11-20 21:02:01
-updated: 2022-11-20 21:02:01
+updated: 2022-11-20 22:02:01
 tags: 
 - 日记
 - 生活
@@ -10,7 +10,7 @@ categories:
 - 经验分享
 - 内核
 ---
-# 利用github actions自动编译内核 
+# 利用github actions自动编译内核
 
 [XXTX-TOP/Linux-kernel_deb_builder (github.com)](https://github.com/XXTX-TOP/Linux-kernel_deb_builder)
 
