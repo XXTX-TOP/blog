@@ -13,7 +13,7 @@ favicon:                   # Path to the custom favicon (e.g. "/favicon.png" if 
 
 # Banner
 banner:
-  enable: false            # Display banner
+  enable: true            # Display banner
   url: 
   position: center         # Specifies the alignment of the image, see the "object-position" property in CSS
   onAllPages: true         # Display banner on all pages
@@ -51,7 +51,7 @@ links:
     url: https://github.com/XXTX-TOP
   - name: BiliBili
     icon: fa-brands fa-bilibili
-    url: https://space.bilibili.com/351750564
+    url: https://space.bilibili.com/519038170
 
 comment:
   valine:
