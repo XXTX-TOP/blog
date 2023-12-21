@@ -2,9 +2,9 @@
 
 
 <html theme="dark" showBanner="true" hasBanner="true" > 
-<link href="/blog/fontawesome/css/fontawesome.css" rel="stylesheet">
-<link href="/blog/fontawesome/css/brands.css" rel="stylesheet">
-<link href="/blog/fontawesome/css/solid.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
 <script src="/blog/js/color.global.min.js" ></script>
 <script src="/blog/js/load-settings.js" ></script>
 <head>
@@ -53,7 +53,7 @@
 </div>
  
    
-  <div id="main-grid" class="shadow   ">
+  <div id="main-grid" class="  ">
     <div id="nav" class=" is_home "  >
       <navbar id="navbar">
   <nav id="title-nav">
@@ -146,7 +146,37 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">分类</h3>
-      <div class="category-box"></div>
+      <div class="category-box">
+            <a class="category-link" href="/blog/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">
+                随便写写
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/blog/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/%E5%B1%B1%E6%B2%B3%E5%A4%A7%E5%AD%A6/">
+                山河大学
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/blog/categories/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/">
+                开发相关
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/blog/categories/%E5%BC%80%E5%8F%91%E7%9B%B8%E5%85%B3/%E5%AF%84%E6%9C%AF%E5%AE%85%E6%97%A5%E5%B8%B8/">
+                寄术宅日常
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/blog/categories/%E5%BB%BA%E7%AD%91/">
+                建筑
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/blog/categories/%E6%9D%82%E8%B0%88/">
+                杂谈
+                <div class="category-count">1</div>
+            </a>
+        </div>
     </div>
   </div>
 
@@ -256,6 +286,7 @@
       
    
 
+
 <article id="post-npm及node更新升级" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
   <div class="article-inner">
@@ -297,6 +328,7 @@
         
           <div class="truncate-text">
             
+              
 查看 npm 当前版本 npm -v.
 清理 npm 缓存数据 npm cache clean –force.
 更新到最新版本 npm install -g npm.
@@ -310,7 +342,8 @@ n stable
 安装完成之后，用 node –v 查看，还是老版本，安装未生效。 
 
 我用的是zsh，所以执行hash -r。
-  
+
+            
           </div>
         
       </div>
@@ -332,9 +365,13 @@ n stable
   
 </article>
 
- 
+
+
+
+
 
    
+
 
 <article id="post-自动编译内核并构建deb包的介绍" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -374,13 +411,15 @@ n stable
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            利用github actions自动编译内核并构建deb包的介绍成立原因：首先丢上github的链接：XXTX-TOP&#x2F;Linux-kernel_deb_builder (github.com) 
+            
+              利用github actions自动编译内核并构建deb包的介绍成立原因：首先丢上github的链接：XXTX-TOP&#x2F;Linux-kernel_deb_builder (github.com) 
 目前正在持续的更新中，因为还没实现我的终极目的。
 本项目fork自：debuggerx01&#x2F;kernel_deb_builder (github.com) 
 日常使用Linux的过程中，可能经常因为系统的内核不够新导致一些新的硬件无法被驱动、或者是想尝试一下新版内核中的一些特性、比如部分risc-v的驱动在新内核中才被添加进去，及其他的一些原因需要使用到比较新的内核，所以此项目就研究了一下如何主动从kernel.org获取到最新的内核并打包成可以安装的deb。
 原作者在之前的PR中表示之前他还没有编译新版本的需求 ，所以此项目就接手于开始自动获取和编译最近的内核了。
 请不要质疑为什么需要最新的内核、此项目只是一个学习性的项目、用于学习内核编译打包的过程，如果你通过此项目学习到了如何打包内核deb或者其他包格式、目的就达到了。每个人的硬件都不一样、请各取所需。
-此外我...  
+此外我...
+            
           </div>
         
       </div>
@@ -402,9 +441,13 @@ n stable
   
 </article>
 
- 
+
+
+
+
 
    
+
 
 <article id="post-How-to-learn-Linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -436,7 +479,7 @@ n stable
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.2k 词 
+            3.2k 词 
           </div>
         </div>
         
@@ -446,13 +489,15 @@ n stable
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            Linux课程教学大纲（共25节课）
+            
+              Linux课程教学大纲（共25节课）
 Linux简介：什么是Linux，Linux的历史和发展，Linux的特点和优势，Linux的主要发行版和桌面环境，Linux的基本概念和术语。
 Linux安装：如何选择合适的Linux发行版，如何下载和制作Linux启动盘，如何在虚拟机或实体机上安装Linux，如何配置Linux的基本设置和网络连接。
 Linux命令行：什么是命令行，为什么要学习命令行，如何打开和使用终端，如何输入和执行命令，如何查看命令的帮助和手册，常用的命令行快捷键和技巧。
 Linux文件系统：Linux文件系统的结构和特点，如何使用命令行或图形界面管理文件和目录，常用的文件操作命令，如何使用通配符和正则表达式匹配文件，如何使用链接和别名创建快捷方式。
 Linux文本编辑：什么是文本编辑器，Linux中常用的文本编辑器有哪些，如何使用nano、vi、vim等文本编辑器创建和编辑文本文件，如何使用命令行或图形界面复制、剪切、粘贴文本，如何使用grep、sed、awk等工具处理文本。
-Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命令行或图形界面创建、删除...  
+Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命令行或图形界面创建、删除...
+            
           </div>
         
       </div>
@@ -474,9 +519,13 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
   
 </article>
 
- 
+
+
+
+
 
    
+
 
 <article id="post-12代的专业版UOS1060" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -516,11 +565,13 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            UOS专业版 12代Intel 第一个6.4内核UOS专业版 12代Intel 第一个6.4内核
+            
+              UOS专业版 12代Intel 第一个6.4内核UOS专业版 12代Intel 第一个6.4内核
 
 
 
-  
+
+            
           </div>
         
       </div>
@@ -542,9 +593,13 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
   
 </article>
 
- 
+
+
+
+
 
    
+
 
 <article id="post-最新版本6-4内核" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -576,7 +631,7 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            35 词 
+            202 词 
           </div>
         </div>
         
@@ -584,9 +639,11 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            最新版本6.4内核链接：https://pan.baidu.com/s/1CArvDuWVu1XlwZutAafixg?pwd=q0y3提取码：q0y3
--最新版本6.4内核，有问题可反馈至&#120;&#120;&#x74;&#x78;&#x74;&#x6f;&#112;&#64;&#102;&#x6f;&#120;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;m–
-  
+            
+              最新版本6.4内核链接：https://pan.baidu.com/s/1CArvDuWVu1XlwZutAafixg?pwd=q0y3提取码：q0y3
+-最新版本6.4内核，有问题可反馈至&#120;&#x78;&#116;&#120;&#116;&#x6f;&#112;&#64;&#102;&#x6f;&#x78;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;m–
+
+            
           </div>
         
       </div>
@@ -608,9 +665,13 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
   
 </article>
 
- 
+
+
+
+
 
    
+
 
 <article id="post-记录一下linux内核的编译" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -642,7 +703,7 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            147 词 
+            394 词 
           </div>
         </div>
         
@@ -650,7 +711,8 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            记录一下linux内核的编译https://www.kernel.org/
+            
+              记录一下linux内核的编译https://www.kernel.org/
 首先去内核官方下内核包1、安装需要的软件包sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison
 2、拷贝启动目录到源代码目录cp -v &#x2F;boot&#x2F;config-$(uname -r) .config
 3、配置命令启动配置界面make menuconfig
@@ -660,7 +722,8 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
 7、查看所有的内核dpkg –get-selections | grep linux
 8、删除不需要的内核sudo apt-get purge XXX
 9、更新引导sudo update-grub
-  
+
+            
           </div>
         
       </div>
@@ -682,9 +745,13 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
   
 </article>
 
- 
+
+
+
+
 
    
+
 
 <article id="post-利用github-actions自动编译内核" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -716,7 +783,7 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            118 词 
+            233 词 
           </div>
         </div>
         
@@ -724,12 +791,14 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            利用github actions自动编译内核XXTX-TOP&#x2F;Linux-kernel_deb_builder (github.com)
+            
+              利用github actions自动编译内核XXTX-TOP&#x2F;Linux-kernel_deb_builder (github.com)
 这个是我在：debuggerx01&#x2F;kernel_deb_builder 的基础上进行修改得来的，可以自助编译Linux内核。
 
 省去了拿自己的电脑慢慢编译的过程，同时可以及时的发布新的内核deb包，我觉得还不错，分享一下。具体的实现看项目的README.md
 需要其他版本的内核只需要修改下载处的数字和config即可。
-  
+
+            
           </div>
         
       </div>
@@ -751,9 +820,13 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
   
 </article>
 
- 
+
+
+
+
 
    
+
 
 <article id="post-写个在内核编译过程中学到的经验！" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -785,7 +858,7 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            146 词 
+            217 词 
           </div>
         </div>
         
@@ -793,7 +866,8 @@ Linux用户和权限：Linux中的用户和用户组有哪些，如何使用命�
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            写个在内核编译过程中学到的经验！我现在的内核都是靠github actions编译的，但是在最近的一次编译中，发现编译后打包的下载文件贼长，所以看了一眼，发现：
+            
+              写个在内核编译过程中学到的经验！我现在的内核都是靠github actions编译的，但是在最近的一次编译中，发现编译后打包的下载文件贼长，所以看了一眼，发现：
 
 dbg也打包出来了，百思不得其解，为什么dbg不是禁用了吗？
 我的写法是这样的：
@@ -806,7 +880,8 @@ Chapter 4. Common kernel-related tasks (debian.org)
 
 
 随后恍然大悟！！！！！
-  
+
+            
           </div>
         
       </div>
@@ -828,9 +903,13 @@ Chapter 4. Common kernel-related tasks (debian.org)
   
 </article>
 
- 
+
+
+
+
 
    
+
 
 <article id="post-从“山河大学”受益者们的角度-看现在的中国高考制度" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -862,7 +941,7 @@ Chapter 4. Common kernel-related tasks (debian.org)
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1k 词 
+            1.2k 词 
           </div>
         </div>
         
@@ -872,7 +951,8 @@ Chapter 4. Common kernel-related tasks (debian.org)
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            从起源开始——为什么会有“山河大学”？相信这也是每一个知道、刷到这个“大学”的人的疑问：为什么要建立一个如此“乌托邦”式的大学？不妨前往山河大学所要造福的山河四省——山东、山西、河南、河北的高考之下，一探究竟——
+            
+              从起源开始——为什么会有“山河大学”？相信这也是每一个知道、刷到这个“大学”的人的疑问：为什么要建立一个如此“乌托邦”式的大学？不妨前往山河大学所要造福的山河四省——山东、山西、河南、河北的高考之下，一探究竟——
 山东，普通类常规批一段线443；山西，文科本科一批490，二批418，理科本科一批480，二批396；河南，文科本科一批547，二批465，理科本科一批514，二批409；河北，本科批首选历史430，首选物理439
 山河四省，人口基数最大，考生数量最多，分数线也是最高
 同样，也基本都是农业大省
@@ -882,7 +962,8 @@ Chapter 4. Common kernel-related tasks (debian.org)
 那么，他们不想留下来种地么？并不，山河四省的同学们只是想要好的教育资源，仅此而已……
 然后，就有可能给自己的后代更好地教育条件，就能让他们不再重蹈覆辙？那些只是后话，后代不后代暂且不考虑，我们要的是平等的受教育权利
 这也就是为什么，会有山河大学横空出世
-向更深处看——山河大学反映的是什么？毫无疑问，他们都经历了...  
+向更深处看——山河大学反映的是什么？毫无疑问，他们都经历了...
+            
           </div>
         
       </div>
@@ -904,9 +985,13 @@ Chapter 4. Common kernel-related tasks (debian.org)
   
 </article>
 
- 
+
+
+
+
 
    
+
 
 <article id="post-利用Github-Action实现Hexo持续集成并利用Github-Pages完成个人博客搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
    
@@ -948,7 +1033,9 @@ Chapter 4. Common kernel-related tasks (debian.org)
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
+            
               
+            
           </div>
         
       </div>
@@ -970,7 +1057,10 @@ Chapter 4. Common kernel-related tasks (debian.org)
   
 </article>
 
- 
+
+
+
+
 
 
   <nav id="page-nav">
