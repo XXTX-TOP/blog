@@ -107,3 +107,8 @@ theme: vivia
 #deploy:
   #type: git
   #repo:
+
+deploy:
+  type: git
+  repo: git@62.234.65.76:/home/website/repos/blog.git
+  branch: master
