@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>如何搭建博客【3】 | XXTXTOP&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="这段时间在网上看了不少教程，但是发现问题还是很大，所以决定来综合一下。所以下面讲的有很多是参照别的博主的帖子，只用来交流学习。 首先我们来搭建nginx 第一步当然是安装啦 1yum install -y nginx  然后等进度完成后就是启动 12启动Nginx &amp;&amp; 使Nginx开机自动启动 systemctl start nginx &amp;&amp; systemctl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何搭建博客【3】">
+<meta property="og:url" content="https://www.xiongshijie.top/2023/12/29-b79f40137e91/index.html">
+<meta property="og:site_name" content="XXTXTOP&#39;s Blog">
+<meta property="og:description" content="这段时间在网上看了不少教程，但是发现问题还是很大，所以决定来综合一下。所以下面讲的有很多是参照别的博主的帖子，只用来交流学习。 首先我们来搭建nginx 第一步当然是安装啦 1yum install -y nginx  然后等进度完成后就是启动 12启动Nginx &amp;&amp; 使Nginx开机自动启动 systemctl start nginx &amp;&amp; systemctl">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-29T06:45:06.000Z">
+<meta property="article:modified_time" content="2023-12-29T06:45:06.000Z">
+<meta property="article:author" content="XXTXTOP">
+<meta property="article:tag" content="计算机">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="https://storage.deepin.org/thread/202305170933518513_v23batebanner1920x780.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>XXTXTOP's Blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">首页</a>
+    
+      <a class="main-nav-link" href="/archives">归档</a>
+    
+      <a class="main-nav-link" href="/about">关于</a>
+    
+      <a class="main-nav-link" href="/links">友链</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">首页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">归档</a>
+    
+      <a class="nav-dropdown-link" href="/about">关于</a>
+    
+      <a class="nav-dropdown-link" href="/links">友链</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">XXTXTOP </div>
+      <div class="dot"></div>
+      <div class="subtitle">大家好，我是Linux爱好者XXTXTOP，目前在使用deepin/uos等Linux发行版，在学习C/C++ </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/XXTX-TOP" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/XXTX-TOP" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/519038170" title="BiliBili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box"></div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Git%E7%AE%A1%E7%90%86/" rel="tag">Git管理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%89%8D%E8%BD%A6%E4%B9%8B%E9%89%B4/" rel="tag">前车之鉴</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%8E%86%E5%8F%B2/" rel="tag">历史</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%A3%B0%E6%98%8E/" rel="tag">声明</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%B1%B1%E6%B2%B3%E5%A4%A7%E5%AD%A6/" rel="tag">山河大学</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%BB%BA%E7%AD%91/" rel="tag">建筑</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E5%BF%83%E5%BE%97/" rel="tag">开发心得</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E6%97%A5%E5%B8%B8/" rel="tag">开发日常</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%80%9D%E8%80%83/" rel="tag">思考</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" rel="tag">技术分享</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/12 ">
+          十二月 2023 
+          <div class="archive-count">15 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/10 ">
+          十月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/06 ">
+          六月 2023 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/01 ">
+          一月 2021 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2020/06 ">
+          六月 2020 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2020/05 ">
+          五月 2020 
+          <div class="archive-count">2 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/12/29-8ee6e4370f54/" title="BIM行业的商业模式" >
+            <div class="recent-link-text">
+              BIM行业的商业模式
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/12/29-4edcb18e717b/" title="阿尔瓦罗·西扎：我的建筑里没有“我”" >
+            <div class="recent-link-text">
+              阿尔瓦罗·西扎：我的建筑里没有“我”
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/12/29-64756e3edd88/" title="工程管理概论【2】" >
+            <div class="recent-link-text">
+              工程管理概论【2】
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/12/29-17a885be2baa/" title="工程管理概论" >
+            <div class="recent-link-text">
+              工程管理概论
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/12/29-dac075b2ab27/" title="中国近代史纲要" >
+            <div class="recent-link-text">
+              中国近代史纲要
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-如何搭建博客【3】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        如何搭建博客【3】
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-12-29T06:45:06.000Z" itemprop="datePublished">2023-12-29</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            3.3k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag">计算机</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="这段时间在网上看了不少教程，但是发现问题还是很大，所以决定来综合一下。"><a href="#这段时间在网上看了不少教程，但是发现问题还是很大，所以决定来综合一下。" class="headerlink" title="这段时间在网上看了不少教程，但是发现问题还是很大，所以决定来综合一下。"></a>这段时间在网上看了不少教程，但是发现问题还是很大，所以决定来综合一下。</h1><p>所以下面讲的有很多是参照别的博主的帖子，只用来交流学习。</p>
+<p>首先我们来搭建nginx</p>
+<p>第一步当然是安装啦</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y nginx</span><br></pre></td></tr></table></figure>
+
+<p>然后等进度完成后就是启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">启动Nginx &amp;&amp; 使Nginx开机自动启动 </span><br><span class="line">systemctl start nginx &amp;&amp; systemctl enable nginx</span><br></pre></td></tr></table></figure>
+
+<p>配置nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>修改第42行左右，将root的目录改为 存放网页文件夹的目录。</p>
+<p>这个地方你博客的文件目录在哪就填哪里，因人而异啦</p>
+<p>我用的就是安装在&#x2F;home&#x2F;website&#x2F;blogs里面</p>
+<p>然后就是服务器上的node.js 安装，是不是很熟悉呢，对的我们在用户机上安装过的呢。</p>
+<p>此处，我们使用<a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions">node.js</a>提供的rpm安装方式，对node.js进行安装。 其中的setup_13.x 这里根据自己的需要或新版本填写。（注意<strong>centos 6</strong>不支持node.js12及更高版本）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">curl -sL https://rpm.nodesource.com/setup_13.x | bash -</span><br><span class="line">yum install -y nodejs</span><br><span class="line"></span><br><span class="line">安装完成后进行测试：</span><br><span class="line">node -v</span><br><span class="line">v13.7.0</span><br><span class="line">npm -v</span><br><span class="line">v6.13.6</span><br><span class="line">则表示安装成功</span><br></pre></td></tr></table></figure>
+
+<p>然后安装最新的git</p>
+<p>我们可以先新建一个目录用来放安装包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">mkdir package</span><br><span class="line">cd package</span><br></pre></td></tr></table></figure>
+
+<p>下面的操作如下：</p>
+<h1 id="将复制的链接粘贴在wget-后面"><a href="#将复制的链接粘贴在wget-后面" class="headerlink" title="将复制的链接粘贴在wget 后面"></a>将复制的链接粘贴在wget 后面</h1><p>wget <a target="_blank" rel="noopener" href="https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.25.0.tar.gz">https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.25.0.tar.gz</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 下载依赖环境包</span><br></pre></td></tr></table></figure>
+
+<p>yum install gcc-c++ perl-ExtUtils-MakeMaker<br>yum install yum curl-devel expat-devel openssl-devel zlib-devel</p>
+<p>‘’’<br>有些教程会说安装gettext-devel这是不对的。<br>因为gettext依赖于git,安装的时候会导致自动安装低版本的git。<br>‘’’</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#将压缩包解压至/usr/local/目录</span><br></pre></td></tr></table></figure>
+
+<p>tar -xzvf git-2.25.0.tar.gz -C &#x2F;usr&#x2F;local&#x2F;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#进入解压目录，配置安装</span><br></pre></td></tr></table></figure>
+
+<p>cd &#x2F;usr&#x2F;local&#x2F;git-2.25.0&#x2F;<br>make configure<br>.&#x2F;configure –prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;git&#x2F;<br>make profix&#x3D;&#x2F;usr&#x2F;local&#x2F;git&#x2F; #要安装git的目录<br>make install</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 在执行完install后 /usr/local/目录下会出现上面配置的git文件夹</span><br></pre></td></tr></table></figure>
+
+<p>配置环境变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#配置环境变量* vim /etc/profile </span><br><span class="line">在最后一行添加： export PATH=$PATH:/usr/local/git/bin</span><br><span class="line">：wq保存并退出，</span><br><span class="line">输入如下指令，使修改生效。 source /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>输入</p>
+<p>git –version 其实应该git -v就行吧，就是查看版本号，如果能查询到你所安装的git就可以啦</p>
+<h3 id="然后配置git"><a href="#然后配置git" class="headerlink" title="然后配置git"></a>然后配置git</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 创建git用户 adduser git	</span><br><span class="line">设置git用户密码passwd git</span><br></pre></td></tr></table></figure>
+
+<p>然后修改git的权限</p>
+<p>修改 &#x2F;etc&#x2F;sudoers 文件: <code>vim /etc/sudoers</code></p>
+<p>在 root ALL&#x3D;(ALL) ALL 下面添加</p>
+<p> git ALL&#x3D;(ALL) ALL</p>
+<p>然后ctrl +c 输入:wq! 强制退出，此处必须强退</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	#切换到git用户</span><br><span class="line">su git</span><br><span class="line">	# 切换到~目录下，并新建.ssh 文件夹</span><br><span class="line">cd ~ &amp;&amp; mkdir .ssh</span><br><span class="line">	# 修改.ssh文件夹权限</span><br><span class="line">chmod 700 .ssh</span><br><span class="line">	</span><br><span class="line">	# 生成服务器公钥</span><br><span class="line">ssh-keygen</span><br><span class="line">cp id_rsa.pub authorized_keys</span><br><span class="line"></span><br><span class="line">此时 ~/.ssh/目录下就会有三个文件夹，如下图所示：</span><br><span class="line">最后我们修改其权限</span><br><span class="line">chmod 600 ~/.ssh/authorized_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>然后此处可以用本地的电脑去链接到git服务器了</p>
+<p>打开本地电脑的cmd, 输入：<code>ssh -v git@服务器公网IP</code><br>回车之后，输入刚才设置的git密码。</p>
+<p>之后建立一个git仓库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">mkdir website &amp;&amp; cd website		#创建工程目录</span><br><span class="line">mkdir repos &amp;&amp; cd repos	</span><br><span class="line">git init --bare blog.git		#创建名为blog的仓库</span><br></pre></td></tr></table></figure>
+
+<p>然后配置hooks</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> 修改post-receive</span><br><span class="line">vim /home/website/repos/blog.git/hooks/post-receive</span><br><span class="line"></span><br><span class="line">在其中添加：</span><br><span class="line"># work-tree=你存放hexo生成的blog的地址,     git-dir=仓库(blog.git)地址</span><br><span class="line">git --work-tree=/home/website/blogs --git-dir=/home/website/repos/blog.git checkout -f</span><br><span class="line"></span><br><span class="line">#保存并退出</span><br><span class="line">:wq</span><br><span class="line"></span><br><span class="line">设置权限</span><br><span class="line">	# 赋予该文件可执行权限 ==！！！！非常重要！！！！==</span><br><span class="line">chmod +x /home/website/repos/blog.git/hooks/post-receive、</span><br><span class="line"></span><br><span class="line">	# 改变blog.git目录的拥有者为Git用户</span><br><span class="line">chown -R git:git blog.git		#很重要</span><br><span class="line"></span><br><span class="line">#创建一个用于存放hexo生成的网页的目录</span><br><span class="line">mkdir /home/website/blogs</span><br><span class="line"></span><br><span class="line">#  链接git仓库</span><br><span class="line">chown -R git:git /home/website/blogs</span><br><span class="line"></span><br><span class="line"># 配置权限</span><br><span class="line">chmod -R 755 /home/website/blogs</span><br></pre></td></tr></table></figure>
+
+<p>测试git</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@服务器IP:/home/website/repos/blog.git E:\blogs</span><br></pre></td></tr></table></figure>
+
+<p>检测本地E盘有没有一个blogs 里面有一个隐藏的.git文件</p>
+<p>如果有 那么恭喜你成功了</p>
+<p>然后就是修改你本地config.yml里的地址了，改成你服务器git库的地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@服务器IP:/home/website/repos/blog.git</span><br><span class="line">  branchL master</span><br></pre></td></tr></table></figure>
+
+<p>这个界面相信大家应该很熟悉</p>
+<p>然后重启nginx</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure>
+
+<h1 id="以上参照了soul-Top在CSDN上的一篇博文"><a href="#以上参照了soul-Top在CSDN上的一篇博文" class="headerlink" title="以上参照了soul.Top在CSDN上的一篇博文"></a>以上参照了soul.Top在CSDN上的一篇博文</h1><p>地址为 ： <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43869778/article/details/104066144">https://blog.csdn.net/weixin_43869778/article/details/104066144</a></p>
+<p>但是中途出了点错误</p>
+<p>不知道是我操作失误还是如何</p>
+<p>于是我增加了下面几步</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/git-2.25.0/bin-wrappers/git-upload-pack /usr/bin/git-upload-pack </span><br><span class="line"></span><br><span class="line">ln -s /usr/local/git-2.25.0/bin-wrappers/git-receive-pack /usr/bin/git-receive-pack</span><br></pre></td></tr></table></figure>
+
+<p>我去他的位置把他原来的删除掉之后又重新的给这两个pack移到了那个位置，这才能正常的传输。</p>
+<p>由于我操作的时候没有及时的写博文，所以就不能够给大家分享我操作的照片。</p>
+<p>以后又有新的操作尽量还是出过程图吧。</p>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/12/29-2758c675d352/"
+      title="那些建筑需设置消防给水系统"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        那些建筑需设置消防给水系统
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/12/29-3a78b7b7c788/"
+      title="如何搭建博客【2】"
+     >
+
+    <p class="title-text">
+      
+        如何搭建博客【2】
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 XXTXTOP<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
